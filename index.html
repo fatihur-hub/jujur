@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apakah Anda Jelek?</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #noButton {
+            position: absolute;
+        }
+        #questionImage {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <img id="questionImage" src="https://stickerly.pstatic.net/sticker_pack/BtrYdItTyVIjilNTkcXSQA/9AWUKT/2/24b8f8d4-c827-4d47-b5da-cb51abc9c7b0.png" alt="Gambar Pertanyaan">
+        <h1>Apakah Anda Jelek?</h1>
+        <div class="d-flex  align-items-center justify-content-center text-center">
+            <button id="noButton" class="btn btn-danger">Tidak</button>
+            <button id="yesButton" class="btn btn-success" data-toggle="modal" data-target="#honestModal">Tentu Saja</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="honestModal" tabindex="-1" aria-labelledby="honestModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="honestModalLabel">Terimakasih</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Terimakasih telah jujur.<br>
+                    Jangan sedih jika anda punya tampang jelek, asalkan anda baik hati, tidak sombong, orang orang akan memandang anda <b>Jelek</b><br>
+                     Awokawokaowak
+                    <br>
+                    <b>
+                        Jangan semangat, tetap putus asa :)
+                    </b>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer text-center mt-4">
+        <p>Made with ❤️ by Fatih</p>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const noButton = document.getElementById('noButton');
+
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - noButton.clientWidth);
+            const y = Math.random() * (window.innerHeight - noButton.clientHeight);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+
+        noButton.addEventListener('mouseover', moveButton);
+        noButton.addEventListener('click', moveButton);
+    </script>
+</body>
+</html>
